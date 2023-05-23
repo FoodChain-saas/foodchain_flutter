@@ -14,7 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-    home: const SplashScreen(),
+      // title: 'App Title',
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.dark,
+    home: SplashScreen(),
     routes: {
     '/signup': (context) => Signup(),
     },

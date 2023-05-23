@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Utilities/route_paths.dart';
+import 'login.dart';
 
 class Signup extends StatelessWidget {
   final TextEditingController _fullNameController = TextEditingController();
@@ -13,8 +14,7 @@ class Signup extends StatelessWidget {
 
   final TextEditingController _passwordController = TextEditingController();
 
-  final TextEditingController _confirminitPasswordController =
-  TextEditingController();
+  final TextEditingController _ReEnterPasswordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -28,8 +28,10 @@ class Signup extends StatelessWidget {
         // foregroundColor: Colors.transparent,
         backgroundColor: const Color(0xFF0D0D0D),
         title: const Center(
-          child: Text('Signup',
-          style: TextStyle(color: Color(0xFF1A66FF)),),
+          child: Text(
+            'Signup',
+            style: TextStyle(color: Color(0xFF1A66FF)),
+          ),
         ),
       ),
       body: Padding(
@@ -39,22 +41,20 @@ class Signup extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child:  TextFormField(
+              child: TextFormField(
                 controller: _fullNameController,
                 decoration: const InputDecoration(
                   labelText: "Full Name",
-                  border: OutlineInputBorder(
-                  ),
-
+                  border: OutlineInputBorder(),
                   alignLabelWithHint: false,
                   filled: true,
                 ),
               ),
-      ),
+            ),
             const SizedBox(height: 16.0),
             Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child:  TextFormField(
+              child: TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(
                   labelText: "Email Address",
@@ -67,7 +67,7 @@ class Signup extends StatelessWidget {
             const SizedBox(height: 16.0),
             Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child:  TextFormField(
+              child: TextFormField(
                 controller: _phoneNumberController,
                 decoration: const InputDecoration(
                   labelText: "phone number",
@@ -83,50 +83,68 @@ class Signup extends StatelessWidget {
               child: TextFormField(
                 obscureText: passwordVisible,
                 controller: _passwordController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: "Password",
-                  // labelText: "Password",
-                helperText:
-                "Password must contain special Characters",
-                hintStyle: const TextStyle(color: Colors.black54),
-                border: const OutlineInputBorder(),
-            //     suffixIcon: IconButton(
-            //       color: Colors.black,
-            // //       icon: Icon(passwordVisible
-            // //           ? Icons.visibility
-            // //           : Icons.visibility_off),
-            // //       onPressed: () {
-            // //         setState(
-            // //               () {
-            // //             passwordVisible = _passwordVisible;
-            // //           },
-            // //         );
-            // //       },
-            // //     ),
-            // //     alignLabelWithHint: false,
-            // //     enabled: true,
-            // //   ),
-            // // ),
-            // // ),
+                  border: const OutlineInputBorder(),
+                  alignLabelWithHint: false,
+                  filled: true,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      // Handle suffix icon button onPressed event
+                    },
+                    icon: const Icon(Icons.visibility),
+                  ),
                 ),
               ),
             ),
             const SizedBox(height: 16.0),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Re-enter Password',
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
+                obscureText: true,
+                controller: _ReEnterPasswordController,
+                decoration: InputDecoration(
+                  labelText: 'Re-Enter Password',
+                  border: const OutlineInputBorder(),
+                  alignLabelWithHint: false,
+                  filled: true,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      // Handle suffix icon button onPressed event
+                    },
+                    icon: const Icon(Icons.visibility),
+                  ),
+                ),
               ),
-              obscureText: true,
             ),
-            const SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                // Add your signup logic here
-              },
-              style: ElevatedButton.styleFrom(
-                 backgroundColor: const Color(0xFF1A66FF),
-                 ), child: const Text('Signup'), // Set the button color to blue
+            Container(
+              width: double.infinity,
+              height: 50,
+              margin: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  maximumSize: const Size(double.infinity, 100),
+                  backgroundColor: const Color(0xFF1A66FF),
+                  side: const BorderSide(
+                    color: Colors.teal,
+                  ),
+                ),
+                child: const Text(
+                  'SignUp',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
+            ),
             Center(
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -137,16 +155,16 @@ class Signup extends StatelessWidget {
                     const Text(
                       'Already have an account?',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 15,
                       ),
                     ),
                     TextButton(
                         onPressed: () {
-                          Get.toNamed(RoutePaths.login);
+                          Get.offAllNamed(RoutePaths.loginpage);
                         },
                         child: const Text(
-                          'Sign in',
+                          'Login ',
                           style: TextStyle(
                             color: Color(0xFF0057FF),
                             fontSize: 13,
