@@ -1,29 +1,39 @@
 import 'package:flutter/material.dart';
-import 'Views/signup.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'Utilities/route_names.dart';
+import 'Utilities/route_paths.dart';
+import 'Views/onboarding1.dart';
 import 'Views/splashscreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(FoodChainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FoodChainApp extends StatelessWidget {
+  final splashScreen = SplashScreen();
 
-  // This widget is the root of your application.
+  FoodChainApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // title: 'App Title',
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      themeMode: ThemeMode.dark,
-    home: SplashScreen(),
-    routes: {
-    '/signup': (context) => Signup(),
-    },
-    );
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'FoodChain App',
+        // theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+        themeMode: ThemeMode.system,
+        initialRoute: RoutePaths.splash,
+        getPages: [
+          GetPage(
+            title: RouteNames.splash,
+            name: RoutePaths.splash,
+            page: () => splashScreen,
+          ),
+          GetPage(
+            title: RouteNames.onboarding,
+            name: RoutePaths.onboarding,
+            page: () => const Onboarding(),
+          ),
+        ]);
   }
 }
-

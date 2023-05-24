@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:foodchain_flutter/Views/signup.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../Utilities/route_paths.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -16,8 +19,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToSignup() {
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/signup');
+    Timer(const Duration(seconds: 3), () {
+      Get.offAllNamed(RoutePaths.onboarding);
     });
   }
 

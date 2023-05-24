@@ -1,33 +1,69 @@
 import 'package:flutter/material.dart';
-class Onboarding1 extends StatefulWidget {
-  const Onboarding1({Key? key}) : super(key: key);
+
+import 'Bottomsheet.dart';
+
+
+class Onboarding extends StatefulWidget {
+  const Onboarding({Key? key}) : super(key: key);
 
   @override
-  State<Onboarding1> createState() => _Onboarding1State();
+  State<Onboarding> createState() => _OnboardingState();
 }
 
-class _Onboarding1State extends State<Onboarding1> {
+class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Expanded(
-          child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-            Center(
-              // child: Row(children: [
-              child: Image.asset("assets/images/Onboard1.png"),
-              // ]),
-            ),
-            const Center(
-              child: Text(
-                "Let's get started",
-                style: TextStyle(color: Colors.teal, fontSize: 20),
-              ),
-            ),
-          ]),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/Onboard1.png'),
+            fit: BoxFit.fill,
+          ),
         ),
       ),
+
     );
+
+
   }
 
 }
+// // SizedBox(height: 16.0),
+                     // Container(
+                     //   child: Text(
+                     //     'The only decentralized way to fill your belly',
+                     //     textAlign: TextAlign.center,
+                     //     style: TextStyle(
+                     //       fontSize: 16.0,
+                     //     ),
+                     //   ),
+                     // ),
+
+           //           // SizedBox(height: 32.0),
+           //           ElevatedButton(
+           //             onPressed: () {
+           //               // Handle "Continue with Google" button onPressed event
+           //             },
+           //             child: Text('Continue with Google'),
+           //           ),
+           //           SizedBox(height: 8.0),
+           //           ElevatedButton(
+           //             onPressed: () {
+           //               // Handle "Signup" button onPressed event
+           //             },
+           //             child: Text('Signup'),
+           //           ),
+           //           SizedBox(height: 8.0),
+           //           TextButton(
+           //             onPressed: () {
+           //               // Add your logic for "Continue with login" button here
+           //             },
+           //             child: Text('Continue with login'),
+           //           ),
+           //         );
+           //       }
+           //   );
+           // }
+           //
+
