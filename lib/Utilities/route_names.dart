@@ -4,4 +4,7 @@ abstract class RouteNames {
   static const signup = '/signup';
   static const loginpage = '/login-page';
   static const recoveryemail = '/recoveryemail';
+  static const recoverynumber = '/recoverynumber';
+  static const newpassword = '/newpassword';
+  static const connectwaallet = '/connectwaallet';
 }

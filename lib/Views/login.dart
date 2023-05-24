@@ -14,6 +14,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF0D0D0D),
       body: SafeArea(
         child: Expanded(
           child: Column(
@@ -62,7 +63,7 @@ class LoginPage extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    Get.offAllNamed(RoutePaths.recoveryemail);
+                    Get.offAllNamed(RoutePaths.recoverynumber);
                   },
                   child: const Text(
                     'Forgot Password?',
@@ -73,37 +74,74 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 50,
-                margin: const EdgeInsets.only(
-                  top: 16,
-                  bottom: 16,
-                  left: 24,
-                  right: 24,
-                ),
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          20,
-                        ),
+              SizedBox(height: 16.0),
+              // Container(
+              //   width: 342,
+              //   height: 50,
+              //   margin: const EdgeInsets.all(5.0),
+              //   child: ElevatedButton(
+              //     onPressed: () {},
+              //     style: ElevatedButton.styleFrom(
+              //       shape: const RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.all(
+              //           Radius.circular(20),
+              //         ),
+              //       ),
+              //       maximumSize: const Size(double.infinity, 100),
+              //       backgroundColor: const Color(0xFF1A66FF),
+              //       side: const BorderSide(
+              //         color: Color(0xFF1A66FF),
+              //       ),
+              //     ),
+              //     child: const Text(
+              //       'SignUp',
+              //       style: TextStyle(
+              //         color: Colors.black,
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.bold,
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              GestureDetector(
+                onTap: () {
+                  Get.offAllNamed(RoutePaths.signup);
+                  // Add your logic for "Continue with Google" button here
+                },
+                child: Container(
+                  width: 342,
+                  height: 50,
+                  padding: const EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    // border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(8.0),
+                    color:
+                    Color(0xFF1A66FF), // Button background color in dark mode
+                  ),
+                  child: Center(
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Color(0xFFDADADA), // Text color in dark mode
                       ),
                     ),
-                    maximumSize: const Size(double.infinity, 100),
-                    backgroundColor: Colors.teal,
-                    side: const BorderSide(
-                      color: Colors.teal,
-                    ),
                   ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Log In',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
+                  // child: Row(
+                  //   children: [
+                  //     Image.asset(
+                  //       'images/google.png',
+                  //       width: 16.0,
+                  //       height: 16.0,
+                  //     ),
+                  //     Container(child: SizedBox(width: 8.0)),
+                  //     const Text(
+                  //       'Continue with Google',
+                  //       style: TextStyle(
+                  //         color: Color(0xFFDADADA), // Text color in dark mode
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ),
               ),
               Center(
@@ -116,7 +154,7 @@ class LoginPage extends StatelessWidget {
                       const Text(
                         'Already have an account?',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xFF252525),
                           fontSize: 15,
                         ),
                       ),

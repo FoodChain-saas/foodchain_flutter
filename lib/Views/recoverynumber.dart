@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../Utilities/route_paths.dart';
 
 class RecoveryNumber extends StatelessWidget {
   RecoveryNumber({Key? key}) : super(key: key);
@@ -7,7 +11,9 @@ class RecoveryNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: const Center(
             child: Text(
                 'Reset  Password',
@@ -21,8 +27,9 @@ class RecoveryNumber extends StatelessWidget {
         ),
         body: SafeArea(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+            const SizedBox(height: 16.0),
             Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _RecoveryCodeController,
                 decoration: const InputDecoration(
@@ -34,12 +41,15 @@ class RecoveryNumber extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 16.0),
             Container(
-              width: double.infinity,
+              width: 342,
               height: 50,
               margin: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.offAllNamed(RoutePaths.recoveryemail);
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
