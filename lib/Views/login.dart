@@ -68,41 +68,14 @@ class LoginPage extends StatelessWidget {
                   child: const Text(
                     'Forgot Password?',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: Color(0xFF494949),
                       fontSize: 16.0,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 16.0),
-              // Container(
-              //   width: 342,
-              //   height: 50,
-              //   margin: const EdgeInsets.all(5.0),
-              //   child: ElevatedButton(
-              //     onPressed: () {},
-              //     style: ElevatedButton.styleFrom(
-              //       shape: const RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.all(
-              //           Radius.circular(20),
-              //         ),
-              //       ),
-              //       maximumSize: const Size(double.infinity, 100),
-              //       backgroundColor: const Color(0xFF1A66FF),
-              //       side: const BorderSide(
-              //         color: Color(0xFF1A66FF),
-              //       ),
-              //     ),
-              //     child: const Text(
-              //       'SignUp',
-              //       style: TextStyle(
-              //         color: Colors.black,
-              //         fontSize: 20,
-              //         fontWeight: FontWeight.bold,
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              const SizedBox(height: 16.0),
+
               GestureDetector(
                 onTap: () {
                   Get.offAllNamed(RoutePaths.signup);
@@ -126,22 +99,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // child: Row(
-                  //   children: [
-                  //     Image.asset(
-                  //       'images/google.png',
-                  //       width: 16.0,
-                  //       height: 16.0,
-                  //     ),
-                  //     Container(child: SizedBox(width: 8.0)),
-                  //     const Text(
-                  //       'Continue with Google',
-                  //       style: TextStyle(
-                  //         color: Color(0xFFDADADA), // Text color in dark mode
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
+
                 ),
               ),
               Center(
@@ -164,7 +122,7 @@ class LoginPage extends StatelessWidget {
                           child: const Text(
                             'SignUp',
                             style: TextStyle(
-                              color: Color(0xFF0057FF),
+                              color: Color(0xff5766F6),
                               fontSize: 13,
                             ),
                           ))

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../Utilities/route_paths.dart';
 
 class ConnectWaallet extends StatelessWidget {
   const ConnectWaallet({Key? key}) : super(key: key);
@@ -98,7 +102,9 @@ class ConnectWaallet extends StatelessWidget {
                             color: Color(0xFF1A66FF),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAllNamed(RoutePaths.homepage);
+                        },
                         child: const Text(
                           'Skip >>',
                           style: TextStyle(

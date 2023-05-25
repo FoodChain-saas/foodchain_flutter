@@ -55,8 +55,7 @@ class NewPassword extends StatelessWidget {
                 obscureText: true,
                 controller: _ReEnterPasswordController,
                 decoration: InputDecoration(
-                  labelText: 'Re enter Password',
-                  border: const OutlineInputBorder(),
+                  labelText: 'Re enter Password', border: const OutlineInputBorder(),
                   hintText: ".............",
                   alignLabelWithHint: false,
                   filled: true,

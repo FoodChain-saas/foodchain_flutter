@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodchain_flutter/Views/connect-waallet.dart';
+import 'package:foodchain_flutter/Views/home-page.dart';
 import 'package:foodchain_flutter/Views/login.dart';
 import 'package:foodchain_flutter/Views/new-password.dart';
 import 'package:foodchain_flutter/Views/recoverynumber.dart';
@@ -73,6 +74,11 @@ class FoodChainApp extends StatelessWidget {
             title: RouteNames.connectwaallet,
             name: RoutePaths.connectwaallet,
             page: () => const ConnectWaallet(),
+          ),
+          GetPage(
+            title: RouteNames.homepage,
+            name: RoutePaths.homepage,
+            page: () => const HomePage(),
           ),
         ]
 

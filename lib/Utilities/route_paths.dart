@@ -7,4 +7,5 @@ abstract class RoutePaths {
   static const recoverynumber = '/recoverynumber';
   static const newpassword = '/newpassword';
   static const connectwaallet = '/connectwaallet';
+  static const homepage = '/homepage';
 }
