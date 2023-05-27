@@ -27,11 +27,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildMenuBar(),
       bottomNavigationBar: const BottomNavigation(),
       backgroundColor: Colors.black,
       body: ListView(children: [
-        buildMenuBar(),
-        const SizedBox(height: 16.0),
+        // buildMenuBar(),
+        const Divider(height: 16.0),
         // buildSearchBar(),
         // SizedBox(height: 16.0),
         // buildProfileImage(),
@@ -85,7 +86,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildMenuBar() {
+  AppBar buildMenuBar() {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
