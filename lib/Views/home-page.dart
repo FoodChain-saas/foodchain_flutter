@@ -171,7 +171,7 @@ class HomePage extends StatelessWidget {
 
   Widget buildSection(String title, List<Product> products) {
     return SizedBox(
-        height: 200,
+        height: 180,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: products.length,
