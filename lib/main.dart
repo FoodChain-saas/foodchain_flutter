@@ -5,15 +5,16 @@ import 'package:foodchain_flutter/Views/login.dart';
 import 'package:foodchain_flutter/Views/new-password.dart';
 import 'package:foodchain_flutter/Views/recoverynumber.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'Constants/primary-color.dart';
 import 'Utilities/route_names.dart';
 import 'Utilities/route_paths.dart';
 import 'Views/onboarding1.dart';
 import 'Views/signup.dart';
 import 'Views/splashscreen.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(FoodChainApp());
 }
 
@@ -25,7 +26,7 @@ class FoodChainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'FoodChain App',
+        title: 'FoodChain',
         theme: ThemeData(
           brightness: Brightness.light,
         ),
@@ -78,11 +79,8 @@ class FoodChainApp extends StatelessWidget {
           GetPage(
             title: RouteNames.homepage,
             name: RoutePaths.homepage,
-            page: () => const HomePage(),
+            page: () => HomePage(),
           ),
-        ]
-
-
-    );
+        ]);
   }
 }
