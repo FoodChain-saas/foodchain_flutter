@@ -5,7 +5,6 @@ import 'package:foodchain_flutter/Views/login.dart';
 import 'package:foodchain_flutter/Views/new-password.dart';
 import 'package:foodchain_flutter/Views/recoverynumber.dart';
 import 'package:get/get.dart';
-import 'Constants/primary-color.dart';
 import 'Utilities/route_names.dart';
 import 'Utilities/route_paths.dart';
 import 'Views/onboarding1.dart';
