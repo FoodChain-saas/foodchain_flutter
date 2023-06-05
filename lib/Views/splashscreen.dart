@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../Utilities/route_paths.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -27,14 +28,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+          child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('images/splas3.png'),
             fit: BoxFit.cover,
           ),
         ),
-          ),
-        );
+      )),
+    );
   }
 }

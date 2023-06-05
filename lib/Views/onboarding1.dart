@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../Utilities/route_paths.dart';
 
@@ -49,7 +48,7 @@ class _OnboardingState extends State<Onboarding> {
                 fontSize: 16.0,
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             GestureDetector(
               onTap: () {
                 // Add your logic for "Continue with Google" button here
@@ -70,10 +69,10 @@ class _OnboardingState extends State<Onboarding> {
                       width: 16.0,
                       height: 16.0,
                     ),
-                    Container(child: SizedBox(width: 8.0)),
-                    Center(
+                    const SizedBox(width: 8.0),
+                    const Center(
                       child: Center(
-                        child: const Text(
+                        child: Text(
                           'Continue with Google',
                           style: TextStyle(
                             color: Color(0xFFDADADA), // Text color in dark mode
@@ -84,9 +83,8 @@ class _OnboardingState extends State<Onboarding> {
                   ],
                 ),
               ),
-
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             // Container(
             //   width: 342,
             //   height: 50,
@@ -127,11 +125,11 @@ class _OnboardingState extends State<Onboarding> {
                 decoration: BoxDecoration(
                   // border: Border.all(color: Colors.white),
                   borderRadius: BorderRadius.circular(8.0),
-                  color:
-                      Color(0xFF1A66FF), // Button background color in dark mode
+                  color: const Color(
+                      0xFF1A66FF), // Button background color in dark mode
                 ),
-                child: Center(
-                  child: const Text(
+                child: const Center(
+                  child: Text(
                     'SignUp',
                     style: TextStyle(
                       color: Color(0xFFDADADA), // Text color in dark mode
@@ -156,7 +154,7 @@ class _OnboardingState extends State<Onboarding> {
                 // ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             GestureDetector(
               onTap: () {
                 Get.offAllNamed(RoutePaths.loginpage);
@@ -169,11 +167,11 @@ class _OnboardingState extends State<Onboarding> {
                 decoration: BoxDecoration(
                   // border: Border.all(color: const Color(0xFF818CF8)),
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Color(0xFF818CF8),
+                  color: const Color(0xFF818CF8),
                 ), // Button background color in dark mode
                 //  Container(child: SizedBox(width: 8.0)),
-                child: Center(
-                  child: const Text(
+                child: const Center(
+                  child: Text(
                     'Login',
                     style: TextStyle(
                       color: Color(0xFFDADADA), // Text color in dark mode
@@ -219,14 +217,15 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
+      body: SingleChildScrollView(
+          child: Container(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('images/Onboard1.png'),
             fit: BoxFit.fill,
           ),
         ),
-      ),
+      )),
     );
   }
 }

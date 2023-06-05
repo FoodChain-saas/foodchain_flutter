@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodchain_flutter/Views/connect-waallet.dart';
-import 'package:foodchain_flutter/Views/home-page.dart';
+import 'package:foodchain_flutter/Views/connect_wallet.dart';
+import 'package:foodchain_flutter/Views/home_page.dart';
 import 'package:foodchain_flutter/Views/login.dart';
-import 'package:foodchain_flutter/Views/new-password.dart';
+import 'package:foodchain_flutter/Views/new_password.dart';
 import 'package:foodchain_flutter/Views/recoverynumber.dart';
 import 'package:get/get.dart';
 import 'Utilities/route_names.dart';
@@ -10,17 +10,18 @@ import 'Utilities/route_paths.dart';
 import 'Views/onboarding1.dart';
 import 'Views/signup.dart';
 import 'Views/splashscreen.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
   usePathUrlStrategy();
-  runApp(FoodChainApp());
+  runApp(const FoodChainApp());
 }
 
 class FoodChainApp extends StatelessWidget {
-  final splashScreen = SplashScreen();
+  final splashScreen = const SplashScreen();
 
-  FoodChainApp({super.key});
+  const FoodChainApp({super.key});
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -43,7 +44,7 @@ class FoodChainApp extends StatelessWidget {
           GetPage(
             title: RouteNames.onboarding,
             name: RoutePaths.onboarding,
-            page: () => Onboarding(),
+            page: () => const Onboarding(),
           ),
           GetPage(
             title: RouteNames.signup,

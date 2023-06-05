@@ -14,8 +14,9 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0D0D0D),
+      backgroundColor: const Color(0xFF0D0D0D),
       body: SafeArea(
+          child: SingleChildScrollView(
         child: Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -75,7 +76,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16.0),
-
               GestureDetector(
                 onTap: () {
                   Get.offAllNamed(RoutePaths.signup);
@@ -88,18 +88,17 @@ class LoginPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     // border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(8.0),
-                    color:
-                    Color(0xFF1A66FF), // Button background color in dark mode
+                    color: const Color(
+                        0xFF1A66FF), // Button background color in dark mode
                   ),
-                  child: Center(
-                    child: const Text(
+                  child: const Center(
+                    child: Text(
                       'Login',
                       style: TextStyle(
                         color: Color(0xFFDADADA), // Text color in dark mode
                       ),
                     ),
                   ),
-
                 ),
               ),
               Center(
@@ -118,7 +117,8 @@ class LoginPage extends StatelessWidget {
                       ),
                       TextButton(
                           onPressed: () {
-                            Get.offAllNamed(RoutePaths.signup);                          },
+                            Get.offAllNamed(RoutePaths.signup);
+                          },
                           child: const Text(
                             'SignUp',
                             style: TextStyle(
@@ -133,7 +133,7 @@ class LoginPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      )),
     );
   }
 }

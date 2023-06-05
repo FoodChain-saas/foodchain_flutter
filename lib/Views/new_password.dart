@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../Utilities/route_paths.dart';
 
 class NewPassword extends StatelessWidget {
   NewPassword({Key? key}) : super(key: key);
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _ReEnterPasswordController = TextEditingController();
+  final TextEditingController _ReEnterPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+        backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: const Center(
             child: Text(
-                'Reset  Password',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1A66FF),
-                ),
+              'Reset  Password',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1A66FF),
+              ),
             ),
           ),
         ),
         body: SafeArea(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          child: SingleChildScrollView(
+              child:
+                  Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
@@ -55,7 +57,8 @@ class NewPassword extends StatelessWidget {
                 obscureText: true,
                 controller: _ReEnterPasswordController,
                 decoration: InputDecoration(
-                  labelText: 'Re enter Password', border: const OutlineInputBorder(),
+                  labelText: 'Re enter Password',
+                  border: const OutlineInputBorder(),
                   hintText: ".............",
                   alignLabelWithHint: false,
                   filled: true,
@@ -98,7 +101,7 @@ class NewPassword extends StatelessWidget {
                 ),
               ),
             ),
-          ]),
+          ])),
         ));
   }
 }
