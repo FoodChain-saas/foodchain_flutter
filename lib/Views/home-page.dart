@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../Components/bottom-navigation.dart';
@@ -8,20 +7,22 @@ class HomePage extends StatelessWidget {
 
   final List<ProductCategoryList> productCategories = [
     ProductCategoryList(categoryName: 'Top Bites', products: [
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-    ]),
-    ProductCategoryList(categoryName: 'Swallow', products: [
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-    ]),
-    ProductCategoryList(categoryName: 'Snacks', products: [
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-      Product(name: 'Rice', image: 'assets/images/Straw berry Cup Cake.png'),
-    ]),
+      Product(name: 'Straw berry Cup Cake', image: 'assets/images/Straw berry Cup Cake.png', price: '000.56 coins'),
+      Product(name: 'Full Burger meal', image: 'assets/images/Full Burger meal.png', price: '1.2 coin'),
+      Product(name: 'Box of chocolate cookies', image: 'assets/images/Box of chocolate cookies.png', price: '0.25 coins'),
+    ], price: ''),
+
+    ProductCategoryList(categoryName: 'Complete eat', products: [
+      Product(name: 'Full Sausage meal', image: 'assets/images/Full Sausage meal.png', price: '000.90 coins'),
+      Product(name: 'rolls', image: 'images/rolls2.png', price: '0.12 coins'),
+      Product(name: 'puff-puff', image: 'images/puff2.png', price: '000000.42 coins'),
+    ], price: ''),
+
+    ProductCategoryList(categoryName: 'Protein Pack', products: [
+      Product(name: 'Ham Buger', image: 'assets/images/Ham Buger.png', price: '000000000.56'),
+      Product(name: 'Pizza', image: 'assets/images/pizza.png', price: '0.15 coins'),
+      Product(name: 'Pancake', image: 'images/pancake3.png', price: '00.12 coins'),
+    ], price: ''),
   ];
 
   @override
@@ -199,7 +200,7 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 5.0),
                   Text(
-                    products[index].name,
+                    products[index].price,
                     style: const TextStyle(fontSize: 14.0),
                   ),
                 ],
@@ -283,11 +284,14 @@ class HomePage extends StatelessWidget {
 class ProductCategoryList {
   String categoryName;
   List<Product> products;
-  ProductCategoryList({required this.categoryName, required this.products});
+ String  price;
+  ProductCategoryList({required this.categoryName, required this.products, required this.price});
 }
 
 class Product {
   String name;
   String image;
-  Product({required this.name, required this.image});
+  String price;
+  Product({required this.name, required this.image, required this. price});
 }
+
