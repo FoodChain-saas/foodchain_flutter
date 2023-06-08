@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodchain_flutter/constants/primary-color.dart';
 import 'package:get/get.dart';
-import 'package:timely/constants/primary_color.dart';
+
 
 void showSnackbar(String title, String message) {
   Get.snackbar(title, message,

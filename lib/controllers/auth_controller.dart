@@ -1,9 +1,12 @@
 import 'dart:developer';
+import 'package:foodchain_flutter/utilities/route_paths%20copy.dart';
+import 'package:foodchain_flutter/utilities/show_error_snackbar.dart';
+import 'package:foodchain_flutter/utilities/show_snackbar.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:foodchain_flutter/controllers/base_controller.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthController extends BaseController {
   void listenForAuthChanges() {
