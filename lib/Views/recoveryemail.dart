@@ -7,7 +7,9 @@ class RecoveryEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: const Center(
             child: Text(
               'Reset  Password',
@@ -66,7 +68,7 @@ class RecoveryEmail extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
+                    const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text(
                     'Use Phone Number Instead',
                     style: TextStyle(

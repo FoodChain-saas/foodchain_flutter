@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../Utilities/route_paths.dart';
+import '../utilities/route_paths.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _EmailController = TextEditingController();
@@ -14,7 +14,9 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0D0D0D),
       body: SafeArea(
+          child: SingleChildScrollView(
         child: Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -62,46 +64,39 @@ class LoginPage extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
-                    Get.offAllNamed(RoutePaths.recoveryemail);
+                    Get.offAllNamed(RoutePaths.recoverynumber);
                   },
                   child: const Text(
                     'Forgot Password?',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: Color(0xFF494949),
                       fontSize: 16.0,
                     ),
                   ),
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 50,
-                margin: const EdgeInsets.only(
-                  top: 16,
-                  bottom: 16,
-                  left: 24,
-                  right: 24,
-                ),
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          20,
-                        ),
-                      ),
-                    ),
-                    maximumSize: const Size(double.infinity, 100),
-                    backgroundColor: Colors.teal,
-                    side: const BorderSide(
-                      color: Colors.teal,
-                    ),
+              const SizedBox(height: 16.0),
+              GestureDetector(
+                onTap: () {
+                  Get.offAllNamed(RoutePaths.signup);
+                  // Add your logic for "Continue with Google" button here
+                },
+                child: Container(
+                  width: 342,
+                  height: 50,
+                  padding: const EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    // border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: const Color(
+                        0xFF1A66FF), // Button background color in dark mode
                   ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Log In',
-                    style: TextStyle(
-                      color: Colors.white,
+                  child: const Center(
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Color(0xFFDADADA), // Text color in dark mode
+                      ),
                     ),
                   ),
                 ),
@@ -116,17 +111,18 @@ class LoginPage extends StatelessWidget {
                       const Text(
                         'Already have an account?',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xFF252525),
                           fontSize: 15,
                         ),
                       ),
                       TextButton(
                           onPressed: () {
-                            Get.offAllNamed(RoutePaths.signup);                          },
+                            Get.offAllNamed(RoutePaths.signup);
+                          },
                           child: const Text(
                             'SignUp',
                             style: TextStyle(
-                              color: Color(0xFF0057FF),
+                              color: Color(0xff5766F6),
                               fontSize: 13,
                             ),
                           ))
@@ -137,7 +133,7 @@ class LoginPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      )),
     );
   }
 }

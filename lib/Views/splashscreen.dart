@@ -1,9 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:foodchain_flutter/Views/signup.dart';
+import 'package:get/get.dart';
+
+import '../utilities/route_paths.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -16,22 +20,23 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToSignup() {
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/signup');
+    Timer(const Duration(seconds: 3), () {
+      Get.offAllNamed(RoutePaths.onboarding);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SingleChildScrollView(
+          child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('images/splas3.png'),
             fit: BoxFit.cover,
           ),
         ),
-          ),
-        );
+      )),
+    );
   }
 }
