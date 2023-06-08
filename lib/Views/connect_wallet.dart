@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Utilities/route_paths.dart';
+import '../utilities/route_paths.dart';
 
-class ConnectWaallet extends StatelessWidget {
-  const ConnectWaallet({Key? key}) : super(key: key);
+class ConnectWallet extends StatelessWidget {
+  const ConnectWallet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

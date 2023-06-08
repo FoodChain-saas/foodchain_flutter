@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "chain.food.flutter" "\0"
             VALUE "FileDescription", "foodchain_flutter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "foodchain_flutter" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 chain.food.flutter. All rights reserved." "\0"
             VALUE "OriginalFilename", "foodchain_flutter.exe" "\0"
             VALUE "ProductName", "foodchain_flutter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
