@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -48,6 +42,17 @@ class DefaultFirebaseOptions {
         );
     }
   }
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAUzI_YAEILyeddNP6fLOKHk4-WCXO6k4o',
+    appId: '1:275511748317:web:5149a3d1f9872bad781d34',
+    messagingSenderId: '275511748317',
+    projectId: 'foodchain-saas',
+    authDomain: 'foodchain-saas.firebaseapp.com',
+    databaseURL: 'https://foodchain-saas-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'foodchain-saas.appspot.com',
+    measurementId: 'G-RBYVQJTND0',
+  );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCsyUDvLOFALIbzV1oUGqq6otGjYPzo2-k',
@@ -67,5 +72,16 @@ class DefaultFirebaseOptions {
     storageBucket: 'foodchain-saas.appspot.com',
     iosClientId: '275511748317-ajouufbden4chv3hnr7a90u2lpdu69mb.apps.googleusercontent.com',
     iosBundleId: 'chain.food.flutter.foodchainFlutter',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCJSwvNPpBQVAXl6CTaKffW4kLPQv_OYI4',
+    appId: '1:275511748317:ios:ca642178c4d5a06f781d34',
+    messagingSenderId: '275511748317',
+    projectId: 'foodchain-saas',
+    databaseURL: 'https://foodchain-saas-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'foodchain-saas.appspot.com',
+    iosClientId: '275511748317-5hkdb8n2ggetuauec44mqdf7sb4mfofm.apps.googleusercontent.com',
+    iosBundleId: 'chain.food.flutter.foodchainFlutter.RunnerTests',
   );
 }
