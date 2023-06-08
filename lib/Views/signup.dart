@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../Utilities/route_paths.dart';
+import '../utilities/route_paths.dart';
 
 class Signup extends StatelessWidget {
   final TextEditingController _fullNameController = TextEditingController();

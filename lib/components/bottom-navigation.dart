@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Utilities/route_names.dart';
-import '../Utilities/route_paths.dart';
+import '../utilities/route_names.dart';
+import '../utilities/route_paths.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
