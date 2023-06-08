@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Components/bottom-navigation.dart';
+import '../components/bottom-navigation.dart';
 
 
 class ProfileScreen extends StatefulWidget {

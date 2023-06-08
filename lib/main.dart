@@ -5,8 +5,8 @@ import 'package:foodchain_flutter/Views/login.dart';
 import 'package:foodchain_flutter/Views/new_password.dart';
 import 'package:foodchain_flutter/Views/recoverynumber.dart';
 import 'package:get/get.dart';
-import 'Utilities/route_names.dart';
-import 'Utilities/route_paths.dart';
+import 'utilities/route_names.dart';
+import 'utilities/route_paths.dart';
 import 'Views/onboarding1.dart';
 import 'Views/signup.dart';
 import 'Views/splashscreen.dart';
@@ -74,7 +74,7 @@ class FoodChainApp extends StatelessWidget {
           GetPage(
             title: RouteNames.connectwaallet,
             name: RoutePaths.connectwaallet,
-            page: () => const ConnectWaallet(),
+            page: () => const ConnectWallet(),
           ),
           GetPage(
             title: RouteNames.homepage,

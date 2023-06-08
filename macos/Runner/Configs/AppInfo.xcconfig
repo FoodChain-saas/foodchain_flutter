@@ -8,7 +8,7 @@
 PRODUCT_NAME = foodchain_flutter
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.foodchainFlutter
+PRODUCT_BUNDLE_IDENTIFIER = chain.food.flutter.foodchainFlutter
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 chain.food.flutter. All rights reserved.
