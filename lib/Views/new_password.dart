@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class RecoveryEmail extends StatelessWidget {
-  RecoveryEmail({Key? key}) : super(key: key);
+import '../Utilities/route_paths.dart';
+
+class NewPassword extends StatelessWidget {
+  NewPassword({Key? key}) : super(key: key);
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _ReEnterPasswordController = TextEditingController();
+  final TextEditingController _ReEnterPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: const Center(
             child: Text(
-                'Reset  Password',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1A66FF),
-                ),
+              'Reset  Password',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1A66FF),
+              ),
             ),
           ),
         ),
         body: SafeArea(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          child: SingleChildScrollView(
+              child:
+                  Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 obscureText: true,
                 controller: _newPasswordController,
@@ -44,7 +52,7 @@ class RecoveryEmail extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 obscureText: true,
                 controller: _ReEnterPasswordController,
@@ -64,11 +72,13 @@ class RecoveryEmail extends StatelessWidget {
               ),
             ),
             Container(
-              width: double.infinity,
+              width: 342,
               height: 50,
               margin: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.offAllNamed(RoutePaths.connectwaallet);
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
@@ -91,7 +101,7 @@ class RecoveryEmail extends StatelessWidget {
                 ),
               ),
             ),
-          ]),
+          ])),
         ));
   }
 }

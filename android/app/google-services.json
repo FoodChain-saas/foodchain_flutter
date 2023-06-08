@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "6229665685",
+    "project_id": "food-chain-saas",
+    "storage_bucket": "food-chain-saas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6229665685:android:ac995415ebda58b590b89c",
+        "android_client_info": {
+          "package_name": "com.example.foodchain_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD98z5ljupC8JMiuB6mCIMb3-jKYDyGIT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
