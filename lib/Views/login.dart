@@ -7,6 +7,7 @@ class LoginPage extends StatelessWidget {
 
   bool passwordVisible = false;
 
+
   final TextEditingController _passwordController = TextEditingController();
 
   LoginPage({super.key});
