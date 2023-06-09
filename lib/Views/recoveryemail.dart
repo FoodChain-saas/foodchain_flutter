@@ -68,7 +68,7 @@ class RecoveryEmail extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child:
-                    const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text(
                     'Use Phone Number Instead',
                     style: TextStyle(
