@@ -9,7 +9,7 @@ class EmptyCartPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/empty_cart_image.png',
+              'assets/emptycart.png',
               width: 200,
               height: 200,
             ),
@@ -44,6 +44,10 @@ class EmptyCartPage extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Tray',
           ),
         ],
       ),
