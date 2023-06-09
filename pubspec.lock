@@ -295,7 +295,7 @@ packages:
       sha256: "6501fbd55da300384b768785b83e5ce66991266cec21af89ab9ae7f5ce1c4cbb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.15"
+    version: "0.12.15"in
   material_color_utilities:
     dependency: transitive
     description:
