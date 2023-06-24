@@ -8,4 +8,5 @@ abstract class RouteNames {
   static const newpassword = '/newpassword';
   static const connectwaallet = '/connectwaallet';
   static const homepage = '/homepage';
+  static const profile = '/profile';
 }

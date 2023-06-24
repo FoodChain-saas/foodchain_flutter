@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,22 +22,26 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigateToSignup() {
     Timer(const Duration(seconds: 3), () {
+      if (FirebaseAuth.instance.currentUser != null) {
+        Get.offAllNamed(RoutePaths.homepage);
+      }
+
       Get.offAllNamed(RoutePaths.onboarding);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-          child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/splas3.png'),
-            fit: BoxFit.cover,
-          ),
+    return SingleChildScrollView(
+        child: Container(
+      width: Get.width,
+      height: Get.height,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/splash.png'),
+          fit: BoxFit.cover,
         ),
-      )),
-    );
+      ),
+    ));
   }
 }

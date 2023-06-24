@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EmptyCartPage extends StatelessWidget {
+  const EmptyCartPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,26 +15,26 @@ class EmptyCartPage extends StatelessWidget {
               width: 200,
               height: 200,
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Oops! You do not have anything on your cart',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 // Add your navigation logic here
               },
-              child: Text('Start Shopping Now'),
+              child: const Text('Start Shopping Now'),
             ),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

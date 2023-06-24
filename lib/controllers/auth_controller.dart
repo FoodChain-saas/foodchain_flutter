@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:foodchain_flutter/controllers/loading_controller.dart';
 import 'package:foodchain_flutter/utilities/route_paths%20copy.dart';
 import 'package:foodchain_flutter/utilities/show_error_snackbar.dart';
 import 'package:foodchain_flutter/utilities/show_snackbar.dart';
@@ -22,10 +23,12 @@ class AuthController extends BaseController {
 
   Future<bool> signInwithEmailAndPassword(String email, String password) async {
     try {
+      LoadingControler.startLoadingStatic(Get.context!);
+
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
 
-      listenForAuthChanges();
+      // listenForAuthChanges();
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -33,7 +36,11 @@ class AuthController extends BaseController {
         showErrorSnackbar('No user found for that email.');
       } else if (e.code == 'wrong-password') {
         showErrorSnackbar('Wrong password provided.');
+      } else {
+        showErrorSnackbar('Login failed!!!');
       }
+
+      LoadingControler.stopLoadingStatic(Get.context!);
 
       return false;
     }
@@ -41,6 +48,8 @@ class AuthController extends BaseController {
 
   Future<bool> register(String email, String password, String phoneNumber,
       String fullName) async {
+    LoadingControler.startLoadingStatic(Get.context!);
+
     try {
       var credentials =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -52,7 +61,9 @@ class AuthController extends BaseController {
       await user.updateDisplayName(fullName);
       await user.sendEmailVerification();
 
-      listenForAuthChanges();
+      // listenForAuthChanges();
+
+      LoadingControler.stopLoadingStatic(Get.context!);
 
       return true;
     } on FirebaseAuthException catch (e) {
@@ -62,6 +73,8 @@ class AuthController extends BaseController {
         showErrorSnackbar('An account already exists for that email.');
       }
 
+      LoadingControler.stopLoadingStatic(Get.context!);
+
       return false;
     } catch (e) {
       if (kDebugMode) {
@@ -69,12 +82,16 @@ class AuthController extends BaseController {
       }
       showErrorSnackbar("Something went wrong");
 
+      LoadingControler.stopLoadingStatic(Get.context!);
+
       return false;
     }
   }
 
   Future<bool> signInwithGoogle() async {
     try {
+      LoadingControler.startLoadingStatic(Get.context!);
+
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser =
           await GoogleSignIn(clientId: "").signIn();
@@ -95,15 +112,23 @@ class AuthController extends BaseController {
 
       await FirebaseAuth.instance.signInWithCredential(credential);
 
-      listenForAuthChanges();
+      // listenForAuthChanges();
+
+      LoadingControler.stopLoadingStatic(Get.context!);
 
       return true;
 
       // Get.toNamed(RouteNames.homeScreen);
     } catch (e) {
+      LoadingControler.stopLoadingStatic(Get.context!);
+
+      var errorMessage = "Sign in with google failed: $e";
+
       if (kDebugMode) {
-        debugPrint(e.toString());
+        debugPrint(errorMessage);
       }
+
+      showErrorSnackbar(errorMessage);
 
       return false;
     }
@@ -111,9 +136,13 @@ class AuthController extends BaseController {
 
   Future<bool> signOut() async {
     try {
+      LoadingControler.startLoadingStatic(Get.context!);
+
       await FirebaseAuth.instance.signOut();
 
       showSnackbar("Alert", "You've logged out");
+
+      LoadingControler.stopLoadingStatic(Get.context!);
 
       await Get.toNamed(RoutePaths.login);
 
@@ -122,6 +151,8 @@ class AuthController extends BaseController {
       if (kDebugMode) {
         debugPrint(e.toString());
       }
+
+      LoadingControler.stopLoadingStatic(Get.context!);
 
       showErrorSnackbar("Logout failed");
 
